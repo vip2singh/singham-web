@@ -1,3 +1,66 @@
-body { font-family: Arial, sans-serif; margin: 0; line-height: 1.6; }
-header, footer { background:#333; color:#fff; padding:1rem; text-align:center; }
-nav a { margin:0 1rem; color:#0066cc; text-decoration:none; }
+:root{
+  --bg:#fff7e6;
+  --card:#ffffff;
+  --accent:#f4a261;
+  --accent-2:#2a9d8f;
+  --text:#2b2b2b;
+  --shadow: 0 4px 12px rgba(0,0,0,0.08);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:linear-gradient(180deg,var(--bg),#fff);
+  color:var(--text);
+  padding:24px;
+  line-height:1.4;
+}
+
+.container{
+  max-width:920px;
+  margin:0 auto;
+}
+
+header{ text-align:center; margin-bottom:18px }
+h1{ margin:0; font-size:1.9rem; color:var(--accent-2) }
+.subtitle{ margin:6px 0 0; color:#466b6b }
+
+.card{
+  background:var(--card);
+  padding:16px;
+  border-radius:10px;
+  box-shadow:var(--shadow);
+  margin:12px 0;
+}
+
+.sequence{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:12px 0;
+}
+
+.seq-card{
+  background:linear-gradient(180deg,#fff,#fff4eb);
+  border:2px solid #ffe5d1;
+  padding:10px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  min-width:140px;
+  text-align:center;
+  font-weight:600;
+}
+
+.seq-card[aria-pressed="true"]{ outline:4px solid rgba(42,157,143,0.15) }
+
+.controls{ margin-top:10px; display:flex; gap:8px; align-items:center; flex-wrap:wrap }
+button{ background:var(--accent); color:white; border:none; padding:8px 12px; border-radius:8px; cursor:pointer }
+button#reset-order{ background:#e76f51 }
+button#submit-quiz{ background:var(--accent-2) }
+
+img{ max-width:100%; border-radius:8px; margin-top:8px }
+
+@media (max-width:560px){
+  .seq-card{ min-width:48%; }
+}
