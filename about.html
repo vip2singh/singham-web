@@ -1,12 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>About – My Static Site</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>From Seed to Sunflower — Kids Lesson</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header><h1>About This Site</h1></header>
-  <main><p>This site is built with plain HTML/CSS and deployed on DigitalOcean App Platform.</p></main>
+  <main class="container" id="main">
+    <header>
+      <h1>From Seed to Sunflower</h1>
+      <p class="subtitle">Learn how a seed becomes a beautiful flower!</p>
+    </header>
+
+    <section aria-labelledby="read-title" class="card">
+      <h2 id="read-title">Read: How a Seed Grows</h2>
+      <p>
+        A seed contains everything a plant needs to start growing. With water, soil, and sunlight the seed sprouts roots and a tiny shoot. Over time the plant grows leaves, gets taller, and finally opens a bright flower. Bees visit the flower, and new seeds can grow from it.
+      </p>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Sunflower_sky_backdrop.jpg" alt="Sunflower in a field" />
+        <figcaption>Sunflower grown from a tiny seed</figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="sequence-title" class="card">
+      <h2 id="sequence-title">Activity 1: Put the steps in order</h2>
+      <p>Click the cards to place them in the right order. Use keyboard: Tab to focus and Enter to select.</p>
+
+      <div id="sequence" class="sequence">
+        <!-- Shuffle these when page loads -->
+        <button class="seq-card" data-step="3" aria-pressed="false">Flower opens</button>
+        <button class="seq-card" data-step="1" aria-pressed="false">Seed planted</button>
+        <button class="seq-card" data-step="2" aria-pressed="false">Seed sprouts</button>
+        <button class="seq-card" data-step="4" aria-pressed="false">Seeds form</button>
+      </div>
+
+      <div class="controls">
+        <button id="check-order">Check Order</button>
+        <button id="reset-order">Reset</button>
+        <div id="order-feedback" role="status" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="quiz-title" class="card">
+      <h2 id="quiz-title">Quiz: Choose the best answer</h2>
+      <form id="quiz-form">
+        <fieldset>
+          <legend>1. What does a seed need to start growing?</legend>
+          <label><input type="radio" name="q1" value="a"> Snow and ice</label><br/>
+          <label><input type="radio" name="q1" value="b"> Water, soil, and sunlight</label><br/>
+          <label><input type="radio" name="q1" value="c"> A TV</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>2. What do bees help with?</legend>
+          <label><input type="radio" name="q2" value="a"> Painting the petals</label><br/>
+          <label><input type="radio" name="q2" value="b"> Pollinating flowers</label><br/>
+          <label><input type="radio" name="q2" value="c"> Writing letters</label>
+        </fieldset>
+
+        <div class="controls">
+          <button type="button" id="submit-quiz">Submit Answers</button>
+          <div id="quiz-feedback" role="status" aria-live="polite"></div>
+        </div>
+      </form>
+    </section>
+
+    <footer class="card">
+      <p>Want other lessons or different age levels? Ask me to create more!</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
