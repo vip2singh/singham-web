@@ -1,0 +1,5 @@
+name: singham-web
+services:
+  - name: static
+    type: static_site
+    source_dir: .
